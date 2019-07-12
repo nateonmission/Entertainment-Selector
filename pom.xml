@@ -16,4 +16,12 @@
         <maven.compiler.target>12</maven.compiler.target>
     </properties>
 
+<dependencies>
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.7</version>
+  </dependency>
+</dependencies>
+
 </project>
