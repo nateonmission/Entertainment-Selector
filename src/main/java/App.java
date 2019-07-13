@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class App
 {
-    public static void main(String[] args2) {
+    public static void main(String[] args) {
         ReadPrimary();
         MainMenu();
         System.out.println("End of line");
@@ -45,7 +45,7 @@ public class App
 
     private static int ReadPrimary()
     {
-        String filePath = ".\\amazon_com_extras.csv";
+        String filePath = ".\\books_uniq_weeks.csv";
         BufferedReader br = null;
 
         try
