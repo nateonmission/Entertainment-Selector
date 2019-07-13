@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class App
@@ -47,14 +48,19 @@ public class App
     {
         String filePath = ".\\books_uniq_weeks.csv";
         BufferedReader br = null;
+        List<BestSellers> bestSeller = new BestSellersReader(filePath).getData();
+        for (BestSellers temp : bestSeller)
+        {
+            System.out.println(temp.title);
 
+        }
         try
         {
             br = new BufferedReader(new FileReader(filePath));
             String line;
             while ((line = br.readLine()) != null)
             {
-                System.out.println(line);
+                // System.out.println(line);
             }
         }
         catch (IOException e)

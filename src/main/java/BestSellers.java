@@ -4,20 +4,20 @@ import java.util.Date;
 public class BestSellers
 {
 
-        private String publisher;
-        private String dagger;
-        private String book_review_link;
-        private String author;
-        private String primary_isbn10;
-        private String price;
-        private String primary_isbn13;
-        private String sunday_review_link;
+    public String publisher;
+    public String dagger;
+    public String book_review_link;
+    public String author;
+    public String primary_isbn10;
+    public String price;
+    public String primary_isbn13;
+    public String sunday_review_link;
         // private String date;
-        private String first_chapter_link;
-        private String contributor;
-        private String title;
-        private String age_group;
-        private String weeks_on_list;
+    public String first_chapter_link;
+    public String contributor;
+    public String title;
+    public String age_group;
+    public String weeks_on_list;
 
         public BestSellers
                 (
