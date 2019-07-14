@@ -7,8 +7,9 @@ import java.util.Scanner;
 public class App
 {
     public static void main(String[] args) {
-        ReadPrimary();
-        MainMenu();
+        String NYTfilePath = ".\\books_uniq_weeks.csv";
+        int targetYear = MainMenu();
+        ReadPrimary(NYTfilePath, targetYear);
         System.out.println("End of line");
     }
 
@@ -16,42 +17,40 @@ public class App
     {
 
         System.out.println("********** MAIN MENU **********");
-        System.out.println("1. Option 1");
-        System.out.println("2. Option 2");
-        System.out.println("3. Exit");
+        System.out.println("  11. 2011          14. 2014");
+        System.out.println("  12. 2012          15. 2015");
+        System.out.println("  13. 2013");
+        System.out.println(" ");
+        System.out.println("  00. Exit");
         System.out.println(" ");
         System.out.println("Please, make a selection: ");
         Scanner userSelection = new Scanner(System.in);
-        int userSelectionStr = userSelection.nextInt();
+        int userSelectionInt = userSelection.nextInt();
 
-        if (userSelectionStr == 1)
+        if (userSelectionInt > 10 || userSelectionInt < 16)
         {
-            return One();
+            return userSelectionInt;
         }
-        else if (userSelectionStr == 2)
+        else if (userSelectionInt == 00)
         {
             return Two();
         }
-        else if (userSelectionStr == 3)
+        else
         {
             System.out.println("Goodbye!");
             return 3;
         }
-        else
-        {
-            return 4;
-        }
+
 
     }
 
-    private static int ReadPrimary()
+    private static int ReadPrimary(String filePath, int targetYear)
     {
-        String filePath = ".\\books_uniq_weeks.csv";
         BufferedReader br = null;
-        List<BestSellers> bestSeller = new BestSellersReader(filePath).getData();
+        List<BestSellers> bestSeller = new BestSellersReader(filePath, targetYear).getData();
         for (BestSellers temp : bestSeller)
         {
-            System.out.println(temp.title);
+            System.out.println(temp.title + " by " + temp.author + " (" + temp.date + ")");
 
         }
         try
@@ -77,11 +76,6 @@ public class App
         return 0;
     }
 
-    private static int One()
-    {
-        System.out.println("1");
-        return 5;
-    }
 
     private static int Two()
     {

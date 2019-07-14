@@ -12,7 +12,7 @@ public class BestSellers
     public String price;
     public String primary_isbn13;
     public String sunday_review_link;
-        // private String date;
+    public String date;
     public String first_chapter_link;
     public String contributor;
     public String title;
@@ -29,7 +29,7 @@ public class BestSellers
                         String price,
                         String primary_isbn13,
                         String sunday_review_link,
-                        // Date date,
+                        String date,
                         String first_chapter_link,
                         String contributor,
                         String title,
@@ -45,7 +45,7 @@ public class BestSellers
             this.price = price;
             this.primary_isbn13 = primary_isbn13;
             this.sunday_review_link = sunday_review_link;
-            // this.date = date;
+            this.date = date;
             this.first_chapter_link = first_chapter_link;
             this.contributor = contributor;
             this.title = title;

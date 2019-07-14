@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class BestSellersReader {
     private ArrayList<BestSellers> data = new ArrayList<BestSellers>();
 
-    public BestSellersReader(String fileName) {
+    public BestSellersReader(String fileName, int targetYear) {
         try {
             Reader in = new FileReader(fileName);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(in);
@@ -25,7 +25,7 @@ public class BestSellersReader {
                 String price = record.get("price").trim();
                 String primary_isbn13 = record.get("primary_isbn13").trim();
                 String sunday_review_link = record.get("sunday_review_link").trim();
-                // Date date = record.get("date").trim();
+                String date = record.get("date").trim();
                 String first_chapter_link = record.get("first_chapter_link").trim();
                 String contributor = record.get("contributor").trim();
                 String title = record.get("title").trim();
@@ -41,15 +41,20 @@ public class BestSellersReader {
                         price,
                         primary_isbn13,
                         sunday_review_link,
-                        // date,
+                        date,
                         first_chapter_link,
                         contributor,
                         title,
                         age_group,
                         weeks_on_list
                 );
+                // System.out.println(bestSeller.date.substring(bestSeller.date.length()-2));
+                int year = Integer.parseInt(bestSeller.date.substring(bestSeller.date.length()-2));
+                if(year == targetYear){
+                    data.add(bestSeller);
+                }
 
-                data.add(bestSeller);
+
             }
         } catch (FileNotFoundException e) {
             System.err.println("Record missing");
