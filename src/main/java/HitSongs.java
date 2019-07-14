@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
 public class HitSongs
 {
 
@@ -22,6 +27,38 @@ public class HitSongs
         this.song = song;
         this.performer = performer;
         this.weeksOnChart = weeksOnChart;
+    }
+
+    public static List<HitSongs> ReadMusic(String filePath, int targetYear, int targetMonth)
+    {
+        BufferedReader br = null;
+        List<HitSongs> hitSong = new HitSongsReader(filePath, targetYear, targetMonth).getData();
+        for (HitSongs temp : hitSong)
+        {
+            System.out.println(temp.song + " by " + temp.performer + " (" + temp.date + ")");
+
+        }
+        try
+        {
+            br = new BufferedReader(new FileReader(filePath));
+            String line;
+            while ((line = br.readLine()) != null)
+            {
+                // System.out.println(line);
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return hitSong;
     }
 
 }

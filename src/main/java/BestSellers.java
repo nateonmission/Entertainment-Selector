@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
 public class BestSellers
 {
 
@@ -49,6 +54,38 @@ public class BestSellers
             this.age_group = age_group;
             this.weeks_on_list = weeks_on_list;
         }
+
+    public static List<BestSellers> ReadBooks(String filePath, int targetYear, int targetMonth)
+    {
+        BufferedReader br = null;
+        List<BestSellers> bestSeller = new BestSellersReader(filePath, targetYear, targetMonth).getData();
+        for (BestSellers temp : bestSeller)
+        {
+            System.out.println(temp.title + " by " + temp.author + " (" + temp.date + ")");
+
+        }
+        try
+        {
+            br = new BufferedReader(new FileReader(filePath));
+            String line;
+            while ((line = br.readLine()) != null)
+            {
+                // System.out.println(line);
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return bestSeller;
+    }
 
 }
 

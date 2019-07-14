@@ -8,9 +8,11 @@ public class App
 {
     public static void main(String[] args) {
         String NYTfilePath = ".\\books_uniq_weeks.csv";
+        String BillboardPath = ".\\billboardData.csv";
         int targetYear = YearMenu();
         int targetMonth = MonthMenu();
-        ReadPrimary(NYTfilePath, targetYear, targetMonth);
+        List<BestSellers> bestSellerList = BestSellers.ReadBooks(NYTfilePath, targetYear, targetMonth);
+        List<HitSongs> hitSongList = HitSongs.ReadMusic(BillboardPath, targetYear, targetMonth);
         System.out.println("End of line");
     }
 
@@ -79,37 +81,7 @@ public class App
 
     }
 
-    private static int ReadPrimary(String filePath, int targetYear, int targetMonth)
-    {
-        BufferedReader br = null;
-        List<BestSellers> bestSeller = new BestSellersReader(filePath, targetYear, targetMonth).getData();
-        for (BestSellers temp : bestSeller)
-        {
-            System.out.println(temp.title + " by " + temp.author + " (" + temp.date + ")");
 
-        }
-        try
-        {
-            br = new BufferedReader(new FileReader(filePath));
-            String line;
-            while ((line = br.readLine()) != null)
-            {
-                // System.out.println(line);
-            }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return 0;
-    }
 
 
     private static int Two()

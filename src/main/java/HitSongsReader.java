@@ -15,23 +15,25 @@ import java.util.ArrayList;
                 Reader in = new FileReader(fileName);
                 Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(in);
                 for (CSVRecord record : records) {
-                    String date = record.get("weekid").trim();
-                    String position = record.get("position").trim();
-                    String song = record.get("song").trim();
-                    String performer = record.get("performer").trim();
-                    String weeksOnChart = record.get("weeks_on_chart").trim();
+                    String date = record.get("WeekID").trim();
+                    String position = record.get("Peak Position").trim();
+                    String song = record.get("Song").trim();
+                    String performer = record.get("Performer").trim();
+                    String weeksOnChart = record.get("Weeks on Chart").trim();
 
                     HitSongs hitSong = new HitSongs(
                             date,
                             position,
                             song,
                             performer,
-                            weeksOnChart,
+                            weeksOnChart
                     );
                     // System.out.println(bestSeller.date.substring(bestSeller.date.length()-2));
-                    int year = Integer.parseInt(hitSong.date.substring(2,4));
-                    int month = Integer.parseInt(hitSong.date.substring(5,7));
+                    // System.out.println(date);
+                    int year = Integer.parseInt(hitSong.date.substring(hitSong.date.length()-2));
+                    int month = getMonth(date);
                     //System.out.println(month + " / " + year);
+                    //System.out.println("year: " + year + " month: " + month);
                     if(year == targetYear && month == targetMonth){
                         data.add(hitSong);
                     }
@@ -47,7 +49,20 @@ import java.util.ArrayList;
             }
         }
 
-        public ArrayList<BestSellers> getData() {
+        private int getMonth(String date)
+        {
+            if (date.substring(1,2).equals("/")) {
+                // System.out.println("1 digit: " + date.substring(0,1) + " ... " + date.substring(1,2));
+                return Integer.parseInt(date.substring(0,1));
+            }
+            else
+            {
+                // System.out.println("2 digit: " + date.substring(0,2) + " ... " + date.substring(1,2));
+                return Integer.parseInt(date.substring(0,2));
+            }
+        }
+
+        public ArrayList<HitSongs> getData() {
             return data;
         }
     }
