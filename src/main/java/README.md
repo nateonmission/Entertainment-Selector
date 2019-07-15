@@ -1,7 +1,3 @@
-:
-
-
-
 # Java-based Entertainment Data Processor
 ----
 
@@ -21,7 +17,7 @@ Each source instantiates objects, which are limited to the user-defined paramete
 These lists of objects then become components of a new object;
 This last object is then converted to a JSON and saved to the home directory.
 
-## Dependenacies
+## Dependencies
 commons-csv = This component from Apache helps with reading the CSV files.
 gson = Google supplies this tool for converting objects to JSON and saving to a file.
 
