@@ -41,7 +41,7 @@ public class App
         Scanner userSelection = new Scanner(System.in);
         int userSelectionInt = userSelection.nextInt();
 
-        if (userSelectionInt > 10 || userSelectionInt < 16)
+        if (userSelectionInt > 10 && userSelectionInt < 16)
         {
             return userSelectionInt;
         }
