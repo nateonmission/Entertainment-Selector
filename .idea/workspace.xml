@@ -4,14 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ce9a9a2-b444-4343-a95a-990c7b7cf35b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BestSellers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BestSellers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BestSellersReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BestSellersReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entertainment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entertainment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HitSongs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HitSongs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HitSongsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HitSongsReader.java" afterDir="false" />
-    </list>
+    <list default="true" id="8ce9a9a2-b444-4343-a95a-990c7b7cf35b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,22 +93,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/HitSongsReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-223">
-              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+            <state relative-caret-position="65">
+              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#355#365#0" expanded="true" />
-                <element signature="e#2877#2878#0" expanded="true" />
+                <element signature="e#2864#2865#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -377,13 +361,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -439,14 +416,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/HitSongsReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-223">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+        <state relative-caret-position="65">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#355#365#0" expanded="true" />
-            <element signature="e#2877#2878#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
           </folding>
         </state>
       </provider>
