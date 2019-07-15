@@ -9,13 +9,13 @@ public class App
 {
     public static void main(String[] args) {
         // Setting up the environment
-        String NYTfilePath = ".\\books_uniq_weeks.csv";
-        String BillboardPath = ".\\billboardData.csv";
+        String NYTfilePath = "books_uniq_weeks.csv";
+        String BillboardPath = "billboardData.csv";
         // Get user INPUT
         int targetYear = YearMenu();
         int targetMonth = MonthMenu();
         // Create user OUTPUT filename
-        String JSONFilePath = ".\\RESULTS-" + String.valueOf(targetYear) + "-" + String.valueOf(targetMonth) + ".JSON";
+        String JSONFilePath = "RESULTS-" + String.valueOf(targetYear) + "-" + String.valueOf(targetMonth) + ".JSON";
         // Read files and get objects back
         List<BestSellers> bestSellerList = BestSellers.ReadBooks(NYTfilePath, targetYear, targetMonth);
         List<HitSongs> hitSongList = HitSongs.ReadMusic(BillboardPath, targetYear, targetMonth);
