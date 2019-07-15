@@ -1,4 +1,3 @@
-
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
@@ -6,12 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Date;
 import java.util.ArrayList;
 
+// This is the READER for the NYT CSV
 public class BestSellersReader {
-    private ArrayList<BestSellers> data = new ArrayList<BestSellers>();
+    private ArrayList<BestSellers> data = new ArrayList<>();
 
+    // This function uses the Apache dependency to read CSV
     public BestSellersReader(String fileName, int targetYear, int targetMonth) {
         try {
             Reader in = new FileReader(fileName);
@@ -53,8 +53,6 @@ public class BestSellersReader {
                 if(year == targetYear && month == targetMonth){
                     data.add(bestSeller);
                 }
-
-
             }
         } catch (FileNotFoundException e) {
             System.err.println("Record missing");
@@ -65,6 +63,7 @@ public class BestSellersReader {
         }
     }
 
+    // Slices the String date to get the month
     private int getMonth(String date)
     {
         if (date.substring(1,2).equals("/")) {

@@ -2,9 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
+// The object that represents the top song
 public class HitSongs
 {
 
@@ -31,6 +30,7 @@ public class HitSongs
         this.weeksOnChart = weeksOnChart;
     }
 
+    // Calls the READER to build a list of songs and prints to console
     public static List<HitSongs> ReadMusic(String filePath, int targetYear, int targetMonth)
     {
         BufferedReader br = null;
@@ -41,26 +41,7 @@ public class HitSongs
             System.out.println(temp.song + " by " + temp.performer + " (" + temp.date + ")");
 
         }
-        try
-        {
-            br = new BufferedReader(new FileReader(filePath));
-            String line;
-            while ((line = br.readLine()) != null)
-            {
-                // System.out.println(line);
-            }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
         return hitSong;
     }
 

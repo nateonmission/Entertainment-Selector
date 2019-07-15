@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeSet;
 
+// This is the READER of the Bilboard CSV
 public class HitSongsReader {
         private ArrayList<HitSongs> data = new ArrayList<HitSongs>();
 
@@ -38,8 +38,6 @@ public class HitSongsReader {
                             data.add(hitSong);
                         }
                     }
-
-
                 }
             } catch (FileNotFoundException e) {
                 System.err.println("Record missing");
@@ -50,19 +48,20 @@ public class HitSongsReader {
             }
         }
 
+        // Slices String date to get month
         private int getMonth(String date)
         {
-            if (date.substring(1,2).equals("/")) {
-                // System.out.println("1 digit: " + date.substring(0,1) + " ... " + date.substring(1,2));
+            if (date.substring(1,2).equals("/"))
+            {
                 return Integer.parseInt(date.substring(0,1));
             }
             else
             {
-                // System.out.println("2 digit: " + date.substring(0,2) + " ... " + date.substring(1,2));
                 return Integer.parseInt(date.substring(0,2));
             }
         }
 
+    // Scans songs in list to prevent duplicate songs in the list
     private boolean dupSong(HitSongs hitSong, List<HitSongs> data)
     {
         boolean duplicate = false;
@@ -75,7 +74,6 @@ public class HitSongsReader {
         }
         return duplicate;
     }
-
         public List<HitSongs> getData() {
             return data;
         }
