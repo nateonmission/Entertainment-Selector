@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class HitSongs
 {
@@ -33,6 +35,7 @@ public class HitSongs
     {
         BufferedReader br = null;
         List<HitSongs> hitSong = new HitSongsReader(filePath, targetYear, targetMonth).getData();
+        System.out.println("********** TOP SONGS **********");
         for (HitSongs temp : hitSong)
         {
             System.out.println(temp.song + " by " + temp.performer + " (" + temp.date + ")");

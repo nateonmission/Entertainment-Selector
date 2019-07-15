@@ -6,8 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
 
-    public class HitSongsReader {
+public class HitSongsReader {
         private ArrayList<HitSongs> data = new ArrayList<HitSongs>();
 
         public HitSongsReader(String fileName, int targetYear, int targetMonth) {
@@ -28,14 +30,13 @@ import java.util.ArrayList;
                             performer,
                             weeksOnChart
                     );
-                    // System.out.println(bestSeller.date.substring(bestSeller.date.length()-2));
-                    // System.out.println(date);
                     int year = Integer.parseInt(hitSong.date.substring(hitSong.date.length()-2));
                     int month = getMonth(date);
-                    //System.out.println(month + " / " + year);
-                    //System.out.println("year: " + year + " month: " + month);
-                    if(year == targetYear && month == targetMonth){
-                        data.add(hitSong);
+                    int positionInt = Integer.parseInt(hitSong.position);
+                    if(year == targetYear && month == targetMonth && positionInt < 2){
+                        if (!dupSong(hitSong, data)) {
+                            data.add(hitSong);
+                        }
                     }
 
 
@@ -62,7 +63,20 @@ import java.util.ArrayList;
             }
         }
 
-        public ArrayList<HitSongs> getData() {
+    private boolean dupSong(HitSongs hitSong, List<HitSongs> data)
+    {
+        boolean duplicate = false;
+        for(HitSongs song : data)
+        {
+            if (hitSong.song.equals(song.song))
+            {
+                duplicate = true;
+            }
+        }
+        return duplicate;
+    }
+
+        public List<HitSongs> getData() {
             return data;
         }
     }
