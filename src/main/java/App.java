@@ -1,10 +1,10 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import com.google.gson.Gson;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+
 
 public class App
 {
@@ -15,6 +15,14 @@ public class App
         int targetMonth = MonthMenu();
         List<BestSellers> bestSellerList = BestSellers.ReadBooks(NYTfilePath, targetYear, targetMonth);
         List<HitSongs> hitSongList = HitSongs.ReadMusic(BillboardPath, targetYear, targetMonth);
+        Entertainment entertainment = new Entertainment(bestSellerList, hitSongList);
+        try {
+            packAndSave(entertainment);
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
         System.out.println("End of line");
     }
 
@@ -83,7 +91,11 @@ public class App
 
     }
 
-
+    private static void packAndSave(Entertainment entertainment) throws java.io.IOException
+    {
+       Gson entertainmentJSON = new Gson();
+       entertainmentJSON.toJson(entertainment, new FileWriter(".//entertainment.json"));
+    }
 
 
     private static int Two()
