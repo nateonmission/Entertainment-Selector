@@ -48,10 +48,8 @@ public class BestSellersReader {
                         age_group,
                         weeks_on_list
                 );
-                // System.out.println(bestSeller.date.substring(bestSeller.date.length()-2));
                 int year = Integer.parseInt(bestSeller.date.substring(bestSeller.date.length()-2));
                 int month = getMonth(date);
-                //System.out.println(month + " / " + year);
                 if(year == targetYear && month == targetMonth){
                     data.add(bestSeller);
                 }
@@ -70,12 +68,10 @@ public class BestSellersReader {
     private int getMonth(String date)
     {
         if (date.substring(1,2).equals("/")) {
-            // System.out.println("1 digit: " + date.substring(0,1) + " ... " + date.substring(1,2));
             return Integer.parseInt(date.substring(0,1));
         }
         else
         {
-            // System.out.println("2 digit: " + date.substring(0,2) + " ... " + date.substring(1,2));
             return Integer.parseInt(date.substring(0,2));
         }
     }

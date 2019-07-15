@@ -1,5 +1,5 @@
 import com.google.gson.Gson;
-
+import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -13,11 +13,12 @@ public class App
         String BillboardPath = ".\\billboardData.csv";
         int targetYear = YearMenu();
         int targetMonth = MonthMenu();
+        String JSONFilePath = ".\\RESULTS-" + String.valueOf(targetYear) + "-" + String.valueOf(targetMonth) + ".JSON";
         List<BestSellers> bestSellerList = BestSellers.ReadBooks(NYTfilePath, targetYear, targetMonth);
         List<HitSongs> hitSongList = HitSongs.ReadMusic(BillboardPath, targetYear, targetMonth);
         Entertainment entertainment = new Entertainment(bestSellerList, hitSongList);
         try {
-            packAndSave(entertainment);
+            packAndSave(entertainment, JSONFilePath);
         }
         catch(IOException e)
         {
@@ -91,10 +92,12 @@ public class App
 
     }
 
-    private static void packAndSave(Entertainment entertainment) throws java.io.IOException
+    private static void packAndSave(Entertainment entertainment, String JSONFilePath) throws java.io.IOException
     {
-       Gson entertainmentJSON = new Gson();
-       entertainmentJSON.toJson(entertainment, new FileWriter(".//entertainment.json"));
+       Gson entertainmentJSON = new GsonBuilder().setPrettyPrinting().create();
+       FileWriter fw = new FileWriter(JSONFilePath);
+       entertainmentJSON.toJson(entertainment, fw);
+       fw.close();
     }
 
 
