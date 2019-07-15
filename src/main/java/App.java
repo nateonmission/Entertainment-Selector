@@ -29,6 +29,8 @@ public class App
         {
             e.printStackTrace();
         }
+        System.out.println(" ");
+        System.out.println("Your file: " + JSONFilePath + " has been saved.");
         System.out.println("End of line");
     }
 
