@@ -18,8 +18,8 @@ These lists of objects then become components of a new object;
 This last object is then converted to a JSON and saved to the home directory.
 
 ## Dependencies
-commons-csv = This component from Apache helps with reading the CSV files.
-gson = Google supplies this tool for converting objects to JSON and saving to a file.
+1. commons-csv = This component from Apache helps with reading the CSV files.
+2. gson = Google supplies this tool for converting objects to JSON and saving to a file.
 
 ----
 -J. Nathan Allen
